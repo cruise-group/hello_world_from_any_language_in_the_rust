@@ -12,19 +12,21 @@ fn main() {
         fn hello_world(_: T, _: V) -> U;
     }
 
-    /// Snum
+    /// Enum
     enum MyEnum {
         // Lannguage, year
         Programming(Vec<(String, u8)>),
         Etc,
     }
 
+    /// Struct
     struct MyStruct {
         first_name: String,
         middle_name: Option<String>,
         last_name: String,
     }
 
+    /// Impliment
     impl MyTrait<String, MyStruct, MyEnum> for MyStruct {
         fn hello_world(s: MyStruct, e: MyEnum) -> String {
             let history = match e {

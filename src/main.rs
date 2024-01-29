@@ -15,6 +15,10 @@ fn main() {
         Etc,
     }
 
-    /// Struct(first_name, middle_name, last_name)
-    struct MyStruct(String, Option<String>, String);
+    /// Struct
+    struct MyStruct {
+        first_name: String,
+        middle_name: Option<String>,
+        last_name: String,
+    }
 }
