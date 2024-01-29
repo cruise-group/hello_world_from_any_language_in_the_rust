@@ -19,8 +19,11 @@ fn main() {
         Etc,
     }
 
-    /// Struct(first_name, middle_name, last_name)
-    struct MyStruct(String, Option<String>, String);
+    struct MyStruct {
+        first_name: String,
+        middle_name: Option<String>,
+        last_name: String,
+    }
 
     impl MyTrait<String, MyStruct, MyEnum> for MyStruct {
         fn hello_world(s: MyStruct, e: MyEnum) -> String {
@@ -33,21 +36,30 @@ fn main() {
                 MyEnum::Etc => "".to_owned(),
             };
             format!(
-                "Hello! world,, My name is {} {} {} \n Prograamming is {}",
-                s.0,
-                s.1.unwrap_or_default(),
-                s.2,
+                "Hello! world, My name is {} {} {}\nProgramming is {}",
+                s.first_name,
+                s.middle_name.unwrap_or_default(),
+                s.last_name,
                 history,
             )
         }
     }
-    let my_struct = MyStruct("T".to_owned(), None, "Kumagai".to_owned());
+    let my_struct = MyStruct {
+        first_name: "T".to_owned(),
+        middle_name: None,
+        last_name: "Kumagai".to_owned(),
+    };
     let history = MyEnum::Programming(vec![
-        ("Basic".to_owned(), 2), ("Fortran".to_owned(), 1),
-        ("VisualBasic".to_owned(), 4), ("VB.NET".to_owned(), 1),
-        ("VC++".to_owned(), 3), ("Java".to_owned(), 6),
-        ("C".to_owned(), 7), ("Perl".to_owned(), 1),
-        ("JavaScript".to_owned(), 2), ("Scala".to_owned(), 1),
+        ("Basic".to_owned(), 2),
+        ("Fortran".to_owned(), 1),
+        ("VisualBasic".to_owned(), 4),
+        ("VB.NET".to_owned(), 1),
+        ("VC++".to_owned(), 3),
+        ("Java".to_owned(), 6),
+        ("C".to_owned(), 7),
+        ("Perl".to_owned(), 1),
+        ("JavaScript".to_owned(), 2),
+        ("Scala".to_owned(), 1),
         ("Rust".to_owned(), 1),
     ]);
     let hello_world_string =
