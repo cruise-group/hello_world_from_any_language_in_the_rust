@@ -8,7 +8,7 @@ fn main() {
         fn hello_world(_: T, _: V) -> U;
     }
 
-    /// Snum
+    /// Enum
     enum MyEnum {
         // Lannguage, year
         Programming(Vec<(String, u8)>),
