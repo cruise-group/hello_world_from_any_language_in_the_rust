@@ -1,11 +1,11 @@
-/// Rust version hello world.
-///
-/// `cargo new hello_world && cd hello_world && cargo run`
-/// ```
-/// println!("Helllo, world!");
-/// ````
-/// see: <https://users.rust-lang.org/t/rust-lang-version-hello-world-starting-here>
-///
+//! Rust version hello world.
+//!
+//! `cargo new hello_world && cd hello_world && cargo run`
+//! ```
+//! println!("Helllo, world!");
+//! ````
+//! see: <https://users.rust-lang.org/t/rust-lang-version-hello-world-starting-here>
+//!
 fn main() {
     /// Trait
     trait MyTrait<U, T, V> {
