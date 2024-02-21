@@ -1,71 +1,33 @@
-//! Rust version hello world.
-//!
-//! `cargo new hello_world && cd hello_world && cargo run`
-//! ```
-//! println!("Helllo, world!");
-//! ````
-//! see: <https://users.rust-lang.org/t/rust-lang-version-hello-world-starting-here>
-//!
+
+/// This is a Rust program that demonstrates how to write "Hello, World!" in various programming languages.
+/// It uses the `write_hello_world_from_any_language_in_the_rust` crate, which provides the necessary functionality.
+/// The program defines a `Programmer` struct with a `Names` field and a `history` vector of `HistoryItem` structs.
+/// Each `HistoryItem` represents a programming language and the number of years the programmer has experience with it.
+/// The `Programmer` struct implements the `Greet` trait, which defines a `hello_world` method that prints a greeting message.
+/// The main function creates an instance of the `Programmer` struct and calls the `hello_world` method to print the greeting.
+use write_hello_world_from_any_language_in_the_rust::{Greet, HistoryItem, Names, Programmer};
+
 fn main() {
-    /// Trait
-    trait MyTrait<U, T, V> {
-        fn hello_world(_: T, _: V) -> U;
-    }
-
-    /// Enum
-    enum MyEnum {
-        // Lannguage, year
-        Programming(Vec<(String, u8)>),
-        Etc,
-    }
-
-    /// Struct
-    struct MyStruct {
-        first_name: String,
-        middle_name: Option<String>,
-        last_name: String,
-    }
-
-    /// Impliment
-    impl MyTrait<String, MyStruct, MyEnum> for MyStruct {
-        fn hello_world(s: MyStruct, e: MyEnum) -> String {
-            let history = match e {
-                MyEnum::Programming(lang) => lang
-                    .iter()
-                    .map(|(lang, _year)| lang.to_owned())
-                    .collect::<Vec<_>>()
-                    .join(", "),
-                MyEnum::Etc => "".to_owned(),
-            };
-            format!(
-                "Hello! world, My name is {} {} {}\nProgramming is {}",
-                s.first_name,
-                s.middle_name.unwrap_or_default(),
-                s.last_name,
-                history,
-            )
-        }
-    }
-    let my_struct = MyStruct {
-        first_name: "T".to_owned(),
-        middle_name: None,
-        last_name: "Kumagai".to_owned(),
+    let me = Programmer {
+        names: Names {
+            first_name: "T".to_owned(),
+            middle_name: None,
+            last_name: "Kumagai".to_owned(),
+        },
+        history: vec![
+            HistoryItem::Programming("Basic".to_owned(), 2),
+            HistoryItem::Programming("Fortran".to_owned(), 1),
+            HistoryItem::Programming("VisualBasic".to_owned(), 4),
+            HistoryItem::Programming("VB.NET".to_owned(), 1),
+            HistoryItem::Programming("VC++".to_owned(), 3),
+            HistoryItem::Programming("Java".to_owned(), 6),
+            HistoryItem::Programming("C".to_owned(), 7),
+            HistoryItem::Programming("Perl".to_owned(), 1),
+            HistoryItem::Programming("JavaScript".to_owned(), 2),
+            HistoryItem::Programming("Scala".to_owned(), 1),
+            HistoryItem::Programming("Rust".to_owned(), 1),
+        ],
     };
-    let history = MyEnum::Programming(vec![
-        ("Basic".to_owned(), 2),
-        ("Fortran".to_owned(), 1),
-        ("VisualBasic".to_owned(), 4),
-        ("VB.NET".to_owned(), 1),
-        ("VC++".to_owned(), 3),
-        ("Java".to_owned(), 6),
-        ("C".to_owned(), 7),
-        ("Perl".to_owned(), 1),
-        ("JavaScript".to_owned(), 2),
-        ("Scala".to_owned(), 1),
-        ("Rust".to_owned(), 1),
-    ]);
-    let hello_world_string =
-        <MyStruct as MyTrait<String, MyStruct, MyEnum>>::hello_world(my_struct, history);
 
-    println!("{hello_world_string}");
+    println!("{}", me.hello_world());
 }
