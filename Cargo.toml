@@ -1,13 +1,13 @@
 [package]
-name = "write-hello-world-from-any-language-in-the-rust"
+name = "hello_world_from_any_language_in_the_rust"
 version = "0.1.1"
 edition = "2021"
 
 readme = "README.md"
 keywords = ["hello-world", "rust-lang", "beginner"]
 license = "MPL-2.0"
-homepage = "https://github.com/cruise-group/write-hello-world-from-any-language-in-the-rust"
-repository = "https://github.com/cruise-group/write-hello-world-from-any-language-in-the-rust"
+homepage = "https://github.com/cruise-group/hello_world_from_any_language_in_the_rust"
+repository = "https://github.com/cruise-group/hello_world_from_any_language_in_the_rust"
 description = "Rust Lang version hello world starting here."
 rust-version = "1.75.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
