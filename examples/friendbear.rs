@@ -5,7 +5,7 @@
 /// Each `HistoryItem` represents a programming language and the number of years the programmer has experience with it.
 /// The `Programmer` struct implements the `Greet` trait, which defines a `hello_world` method that prints a greeting message.
 /// The main function creates an instance of the `Programmer` struct and calls the `hello_world` method to print the greeting.
-use write_hello_world_from_any_language_in_the_rust::{Greet, HistoryItem, Names, Programmer};
+use hello_world_from_any_language_in_the_rust::{Greet, HistoryItem, Names, Programmer};
 
 fn main() {
     let me = Programmer {
